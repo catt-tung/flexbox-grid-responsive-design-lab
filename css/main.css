@@ -1,0 +1,111 @@
+html {
+  box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+     in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%
+}
+
+body {
+  background-color: whitesmoke;
+  /* Use a system font, if none are available use an available sans-serif font */
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  margin: 0;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  font-size: 1.6rem;
+  grid-template-columns: 100%;
+  grid-template-rows: 0.2fr 2fr 1fr 2fr 2fr 1fr;
+  /* grid-template-areas: */
+  text-align: center;
+}
+
+#status {
+  margin-left: auto;
+}
+
+img {
+  border-radius: 50%;
+  border: 5px solid rgb(87, 190, 110);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+h1 {
+  background-color: chartreuse;
+}
+
+#occupation {
+  background-color: antiquewhite;
+}
+
+#brand {
+  background-color: aquamarine;
+}
+
+#offer {
+  background-color:white;
+}
+
+#contact {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+#contact > p {
+  text-align: center;
+  padding: 8%
+}
+
+#phone {
+  background-color: rgb(87, 190, 110);
+  margin: 0 0 0 0;
+}
+
+#chat {
+  background-color: rgb(3, 155, 3);
+  margin: 0 0 0 0;
+}
+
+
+header,
+img,
+content,
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    /* tablet - two column display */
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 50px auto 30px;
+    grid-template-areas: 
+      "header header"
+      "side content"
+      "footer footer";
+  }
+}
